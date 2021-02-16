@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products: Details</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="/ShowStyle.css">
+
+</head>
+<body>
+    <div class="header">
+        <div class="title">
+            <h1>WEST ELM BLUE MART</h1>
+        </div>
+        <div class="store">
+            <a class="btn btn-info" href="/products">Back to Store</a>
+        </div>
+    </div>
+
+    <div class="showList">
+    
+        <div class="prodName">
+            <h2><%=product.name; %></h2>
+        </div>
+
+        <div class="showproduct">
+            <div class="productDetails">
+                <h4><%=product.description; %></h4>
+                <img src="<%=product.img; %>" alt="<%=product.name; %>">
+            </div>
+            
+
+            <div class="showproductPrice">
+                <div class="price">
+                    <h4>PRICE : $ <%=product.price; %></h4>
+
+                    <% if(product.qty === 0) { %>
+                        <h4 class="btn btn-warning">OUT OF STOCK</h4>
+                    <% } else { %>
+                        <h4>QTY : <%=product.qty%></h4>
+                </div>
+            </div>
+            <div class="ownerButtons">
+                <form action="/products/<%=product.id; %>" method="POST">
+                    <input class="btn btn-info" type="submit" value="BUY"/>
+                </form>   
+                    <% } %>
+            
+                    <!--  ADD EDIT HERE-->
+                    <a class="btn btn-info" href="/products/<%=product.id; %>/edit">EDIT</a>
+
+                    <!--  ADD DELETE FORM HERE-->
+                    <form action="/products/<%=product.id; %>?_method=DELETE" method="POST">
+                        <input class="btn btn-info" type="submit" value="DELETE"/>
+                    </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

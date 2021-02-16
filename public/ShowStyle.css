@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+
+
+/* *{
+    border: 1px solid gold;
+} */
+
+.showList{
+    width: 50vmax;
+    margin: auto;
+    border: 1px solid rgba(134, 134, 139, 0.349);
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 3vmax;
+}
+
+.productDetails{
+    text-align: center;
+}
+
+.showproductPrice{
+    text-align: center;
+}
+
+.ownerButtons{
+    display: flex;
+    justify-content: space-around;
+    padding: .5vmax;
+}
+
+img{
+    width: 25vmax;
+    Height: 25vmax;
+}
+
+h1{
+    font-family: 'Potta One', cursive;
+}
+
+.form-group{
+    padding: 1vmax;
+}
