@@ -30,10 +30,9 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 //MIDDLEWARE
 app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
-app.use('/products', productsController);
 app.use(express.static('public'));
 
-
+app.use('/products', productsController);
 
 //LISTENING ROUTE / PORT
 app.listen(port, () => {
